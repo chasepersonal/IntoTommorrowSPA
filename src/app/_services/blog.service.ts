@@ -9,10 +9,17 @@ import { Observable } from 'rxjs';
 
 export class BlogService {
 
+  /* Set base url based on environment variable */
+  baseUrl = environment.apiUrl;
+
   constructor(private http: HttpClient) { }
 
+  getPagebyTitle(title: string): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl + `pages/${title}`);
+  }
+
   getPosts(): Observable<any[]> {
-    return this.http.get<any[]>('http://127.0.0.1:8000/posts/');
+    return this.http.get<any[]>(this.baseUrl + 'posts/');
   }
 
 }

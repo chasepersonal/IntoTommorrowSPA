@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from '../_services/blog.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data: BlogService) { }
+
+  page: any = {
+    title: [],
+    header: [],
+    text: []
+  };
 
   ngOnInit() {
+    this.loadPage();
+  }
+
+  loadPage() {
+    const title = 'About';
+    this.data.getPagebyTitle(title).subscribe(data =>  {
+      this.page = data;
+    });
   }
 
 }

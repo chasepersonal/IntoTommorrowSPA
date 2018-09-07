@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from '../_services/blog.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data: BlogService) { }
+
+  page: any = {
+    title: [],
+    header: [],
+    text: []
+  };
 
   ngOnInit() {
+    this.loadPage();
   }
 
+  loadPage() {
+    const title = 'Home';
+    this.data.getPagebyTitle(title).subscribe(data =>  {
+      this.page = data;
+    });
+  }
 }
