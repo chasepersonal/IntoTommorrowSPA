@@ -12,6 +12,8 @@ import { BlogComponent } from './blog/blog.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
+import { AlbumComponent } from './album/album.component';
+import { BlogService } from './_services/blog.service';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
       MainNavComponent,
       HomeComponent,
       AboutComponent,
-      BlogComponent
+      BlogComponent,
+      AlbumComponent
    ],
    imports: [
       BrowserModule,
@@ -36,9 +39,10 @@ import { HttpClientModule } from '@angular/common/http';
       MatPaginatorModule,
       HttpClientModule
    ],
-   providers: [],
+   providers: [ BlogService ],
    bootstrap: [
       AppComponent
    ]
 })
+
 export class AppModule { }
