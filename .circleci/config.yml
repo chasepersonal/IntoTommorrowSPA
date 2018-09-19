@@ -33,7 +33,7 @@ jobs:
 
       - run:
           name: system-tests
-          command: npm run protractor
+          command: npm run e2e
 
       - save_cache:
           name: save-node-modules
