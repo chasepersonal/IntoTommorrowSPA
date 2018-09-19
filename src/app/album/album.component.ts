@@ -8,22 +8,17 @@ import { BlogService } from '../_services/blog.service';
 })
 export class AlbumComponent implements OnInit {
 
-  page: any = {
-    title: [],
-    header: [],
-    text: [],
-    image: []
-  }
+  album$: Object;
   
   constructor(private data: BlogService) { }
 
   ngOnInit() {
+    this.loadAlbum();
   }
 
-  loadPage() {
-    const title = 'Album';
-    this.data.getPagebyTitle(title).subscribe(data =>  {
-      this.page = data;
+  loadAlbum() {
+    this.data.getAlbum().subscribe(data =>  {
+      this.album$ = data;
     });
   }
 

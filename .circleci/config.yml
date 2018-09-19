@@ -20,10 +20,21 @@ jobs:
       - run:
           name: install-dependencies
           command: npm install
+          command: npm install @angular/cli@6.1.5
+
+      - run:
+          name: install-chrome-for-protractor-tests
+          command: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          command: sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          command: apt update && apt install -yq google-chrome-stable
 
       - run:
           name: unit-tests
-          command: npm run test
+          command: ng test
+
+      - run:
+          name: system-tests
+          command: ng e2e
 
       - save_cache:
           name: save-node-modules

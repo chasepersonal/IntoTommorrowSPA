@@ -14,6 +14,7 @@ import { appRoutes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
 import { AlbumComponent } from './album/album.component';
 import { BlogService } from './_services/blog.service';
+import { AlbumDetailsComponent } from './album-details/album-details.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { BlogService } from './_services/blog.service';
       HomeComponent,
       AboutComponent,
       BlogComponent,
-      AlbumComponent
+      AlbumComponent,
+      AlbumDetailsComponent
    ],
    imports: [
       BrowserModule,

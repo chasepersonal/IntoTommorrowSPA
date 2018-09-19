@@ -1,11 +1,32 @@
 import { browser, by, element } from 'protractor';
 
-export class AppPage {
-  navigateTo() {
+export class NavPage {
+  navigateToHome() {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  navigateToBlog() {
+    return browser.get('/blog');
+  }
+
+  navigateToAbout() {
+    return browser.get('/about');
+  }
+
+  navigateToAlbum() {
+    return browser.get('/album');
+  }
+
+  getHomeId() {
+    return element(by.id("home"));
+  }
+
+
+  getBlogId() {
+    return element(by.id("blog"));
+  }
+
+  getAlbumId() {
+    return element(by.id("album"));
   }
 }

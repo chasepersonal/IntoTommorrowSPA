@@ -19,7 +19,14 @@ export class BlogService {
   }
 
   getPosts(): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl + 'posts/');
+    return this.http.get<any[]>(this.baseUrl + 'posts');
   }
 
+  getAlbum(): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl + 'album');
+  }
+
+  getAlbumBySlug(slug: string): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl + `album/${slug}`);
+  }
 }

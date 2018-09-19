@@ -1,14 +1,28 @@
-import { AppPage } from './app.po';
+import { NavPage } from './app.po';
+import { element, by, browser } from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
-
+describe('PersonalBlog App', () => {
+  let nav: NavPage;
+  
   beforeEach(() => {
-    page = new AppPage();
+    nav = new NavPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to PersonalBlog!');
+  it('should navigate to the Home Page', () => {
+
+    nav.navigateToHome();
+  });
+
+  it('should navigate to the About Page', () => {
+    nav.navigateToAbout();
+  });
+
+  it('should navigate to the Blog Page', () => {
+    nav.navigateToBlog();
+  });
+
+  it('should navigate to the Album Page', () => {
+    nav.navigateToAlbum();
   });
 });
+

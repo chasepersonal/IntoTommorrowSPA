@@ -12,15 +12,15 @@ export class BlogComponent implements OnInit {
 
   posts$: Object;
 
-  constructor(private blogService: BlogService) { }
+  constructor(private data: BlogService) { }
 
   ngOnInit() {
     this.loadPosts();
   }
 
   loadPosts() {
-    this.blogService.getPosts().subscribe(blogService => {
-      this.posts$ = blogService;
+    this.data.getPosts().subscribe(data => {
+      this.posts$ = data;
     });
   }
 
