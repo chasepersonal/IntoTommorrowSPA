@@ -20,7 +20,6 @@ jobs:
       - run:
           name: install-dependencies
           command: npm install
-          command: npm install @angular/cli@6.1.5
 
       - run:
           name: install-chrome-for-protractor-tests
@@ -30,11 +29,11 @@ jobs:
 
       - run:
           name: unit-tests
-          command: ng test
+          command: npm run test
 
       - run:
           name: system-tests
-          command: ng e2e
+          command: npm run protractor
 
       - save_cache:
           name: save-node-modules
