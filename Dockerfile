@@ -10,14 +10,13 @@ RUN apt update && apt install -yq google-chrome-stable
 ADD . /code/personalblogspa
 WORKDIR /code/personalblogspa
 
-# Add node modules to the path
-ENV PATH /code/personalblogspa/node_modules/.bin:$PATH
+# Add all necessary files to the main directory
+COPY . /code/personalblogspa
+
 
 # Add dpendencies
 COPY package.json /code/personalblogspa/package.json
 RUN npm install
 RUN npm install -g @angular/cli@6.1.5
 
-COPY . /code/personalblogspa
-
-CMD ng serve --host 0.0.0.0
+EXPOSE 4200

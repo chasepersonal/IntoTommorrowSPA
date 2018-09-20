@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlbumComponent } from './album/album.component';
 import { BlogService } from './_services/blog.service';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
+import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AlbumDetailsComponent } from './album-details/album-details.component';
       AboutComponent,
       BlogComponent,
       AlbumComponent,
-      AlbumDetailsComponent
+      AlbumDetailsComponent,
+      BlogDetailsComponent
    ],
    imports: [
       BrowserModule,
@@ -41,7 +43,9 @@ import { AlbumDetailsComponent } from './album-details/album-details.component';
       MatPaginatorModule,
       HttpClientModule
    ],
-   providers: [ BlogService ],
+   providers: [
+      BlogService
+   ],
    bootstrap: [
       AppComponent
    ]
