@@ -1,7 +1,7 @@
 <div class="container">
   <mat-card *ngFor="let a of album$">
     <mat-card-title>{{a.title}}</mat-card-title>
-    <mat-card-content>{{a.text}}</mat-card-content>
+    <mat-card-content>{{a.summary}}</mat-card-content>
     <mat-card-content><a id="ads-link" [routerLink]="['/album', a.slug]">Go to full album</a></mat-card-content>
   </mat-card>
   <br>

@@ -7,16 +7,13 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 RUN apt update && apt install -yq google-chrome-stable
 
 # Create Working Directory
-ADD . /code/personalblogspa
-WORKDIR /code/personalblogspa
+ADD . /app
+WORKDIR /app
 
-# Add all necessary files to the main directory
-COPY . /code/personalblogspa
-
-
-# Add dpendencies
-COPY package.json /code/personalblogspa/package.json
+# Add depndencies
+COPY package.json /app/package.json
 RUN npm install
 RUN npm install -g @angular/cli@6.1.5
 
-EXPOSE 4200
+# Add all necessary files to the main directory
+COPY . /app
