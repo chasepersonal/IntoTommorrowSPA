@@ -14,8 +14,8 @@ export class BlogService {
 
   constructor(private http: HttpClient) { }
 
-  getPagebyTitle(title: string): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl + `pages/${title}`);
+  getPagebySlug(slug: string): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl + `pages/${slug}`);
   }
 
   getPosts(): Observable<any[]> {

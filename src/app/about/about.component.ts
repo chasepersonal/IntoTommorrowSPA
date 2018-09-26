@@ -13,7 +13,8 @@ export class AboutComponent implements OnInit {
   page: any = {
     title: [],
     header: [],
-    text: []
+    text: [],
+    slug: []
   };
 
   ngOnInit() {
@@ -21,8 +22,8 @@ export class AboutComponent implements OnInit {
   }
 
   loadPage() {
-    const title = 'About';
-    this.data.getPagebyTitle(title).subscribe(data =>  {
+    const slug = 'about';
+    this.data.getPagebySlug(slug).subscribe(data =>  {
       this.page = data;
     });
   }

@@ -2,7 +2,7 @@
   <mat-card>
     <mat-card-title>{{album.title}}</mat-card-title>
     <mat-card-content>{{album.text}}</mat-card-content>
-    <mat-card-content *ngFor="let i of album.photo" [innerHTML]="x.image"></mat-card-content>
+    <mat-card-content *ngFor="let i of album.photo" [innerHTML]="i.image"></mat-card-content>
   </mat-card>
   <br>
 </div>

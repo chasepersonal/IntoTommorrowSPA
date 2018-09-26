@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   page: any = {
     title: [],
     header: [],
-    text: []
+    text: [],
+    slug: []
   };
 
   ngOnInit() {
@@ -22,8 +23,8 @@ export class HomeComponent implements OnInit {
   }
 
   loadPage() {
-    const title = 'Home';
-    this.data.getPagebyTitle(title).subscribe(data =>  {
+    const slug = 'home';
+    this.data.getPagebySlug(slug).subscribe(data =>  {
       this.page = data;
     });
   }
