@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://into-tommorrow-api.herokuapp.com/api/'
+  apiUrl: 'https://into-tomorrow-api.herokuapp.com/api/'
 };
