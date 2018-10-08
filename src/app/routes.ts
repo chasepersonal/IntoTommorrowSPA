@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AlbumComponent } from './album/album.component';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
+import { PhotoDetailsComponent } from './photo-details/photo-details.component';
 
 export const appRoutes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -13,6 +14,7 @@ export const appRoutes: Routes = [
   {path: 'blog/:slug', component: BlogDetailsComponent },
   {path: 'album', component: AlbumComponent },
   {path: 'album/:slug', component: AlbumDetailsComponent},
+  {path: 'album/:slug/:id', component: PhotoDetailsComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ]

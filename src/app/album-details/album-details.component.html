@@ -2,7 +2,15 @@
   <mat-card>
     <mat-card-title>{{album.title}}</mat-card-title>
     <mat-card-content>{{album.text}}</mat-card-content>
-    <mat-card-content *ngFor="let i of album.photo" [innerHTML]="i.image"></mat-card-content>
+    <mat-card-content>
+      <span class="images" *ngFor="let i of album.photo">
+        <a [routerLink]="['/album', slug, i.id]">
+          <img [src]="i.image">
+        </a>
+        &nbsp;&nbsp;
+      </span>
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="returnToAlbums()">Return to All Albums</button>
   </mat-card>
   <br>
 </div>

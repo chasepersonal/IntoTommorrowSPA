@@ -5,7 +5,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatCardModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatCardModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
@@ -16,6 +17,7 @@ import { AlbumComponent } from './album/album.component';
 import { BlogService } from './_services/blog.service';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
+import { PhotoDetailsComponent } from './photo-details/photo-details.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
       BlogComponent,
       AlbumComponent,
       AlbumDetailsComponent,
-      BlogDetailsComponent
+      BlogDetailsComponent,
+      PhotoDetailsComponent,
    ],
    imports: [
       BrowserModule,

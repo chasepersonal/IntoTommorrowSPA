@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../_services/blog.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class AlbumDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private data: BlogService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private data: BlogService) { }
 
   slug: any;
   album: any = {};
@@ -31,5 +32,9 @@ export class AlbumDetailsComponent implements OnInit {
     this.data.getAlbumBySlug(this.slug).subscribe(data =>  {
       this.album = data;
     });
+  }
+
+  returnToAlbums(): any {
+    this.router.navigate(['/album']);
   }
 }

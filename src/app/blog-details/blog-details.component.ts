@@ -1,5 +1,5 @@
 import { BlogService } from './../_services/blog.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private data: BlogService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private data: BlogService) { }
 
-  slugger: any;
+  slug: any;
   post: any = {};
 
   ngOnInit() {
@@ -22,12 +22,16 @@ export class BlogDetailsComponent implements OnInit {
 
     /* Use paramMap to find the slug parameter from the url */
     this.route.paramMap.subscribe(params => {
-      this.slugger = params.get('slug');
+      this.slug = params.get('slug');
     });
 
     /* Use the current slug to pull data from the appropriate service */
-    this.data.getPostsBySlug(this.slugger).subscribe(data =>  {
+    this.data.getPostsBySlug(this.slug).subscribe(data =>  {
       this.post = data;
     });
+  }
+
+  returnToAllPosts(): any {
+    this.router.navigate(['/blog']);
   }
 }
