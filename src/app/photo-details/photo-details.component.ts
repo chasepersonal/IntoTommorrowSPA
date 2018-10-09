@@ -33,6 +33,7 @@ export class PhotoDetailsComponent implements OnInit {
     });
   }
 
+  /* Create return route to Album page */
   returnToAlbum(): any {
     this.route.paramMap.subscribe(params => {
       this.slug = params.get('slug');
