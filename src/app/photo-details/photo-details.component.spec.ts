@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { PhotoDetailsComponent } from './photo-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule, MatListModule, MatToolbarModule, MatSidenavModule, MatCardModule } from '@angular/material';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('PhotoDetailsComponent', () => {
   let component: PhotoDetailsComponent;
@@ -11,7 +15,17 @@ describe('PhotoDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhotoDetailsComponent ]
+      declarations: [ PhotoDetailsComponent ],
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatListModule,
+        MatIconModule,
+        MatCardModule,
+        BrowserAnimationsModule
+      ]
     })
     .compileComponents();
   }));
